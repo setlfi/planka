@@ -3,10 +3,10 @@
     {
       "id": "GHSA-vfj7-8cjw-p6xm",
       "package": "braces",
-      "reason": "No patched release exists: the advisory covers braces <=3.0.3 and 3.0.3 is the newest version published (first_patched_version is null). In client/ and server/ production trees braces is reached only through patch-package -> find-yarn-workspace-root -> micromatch, which runs at install time over this repository's own patches/ directory and workspace config, never over user input, and it is not part of the browser bundle or the server's runtime code. Upgrade as soon as a fixed braces (or a micromatch that drops it) is published. Re-checked 2026-10-06: braces 3.0.3 is still the newest release and the advisory still lists no patched version; micromatch 4.0.8 (latest) still depends on braces ^3.0.3 and find-yarn-workspace-root 2.0.0 (latest) on micromatch ^4.0.2.",
+      "reason": "No patched release exists: the advisory covers braces <=3.0.3 and 3.0.3 is the newest version published (first_patched_version is null). In client/ and server/ production trees braces is reached only through micromatch, on two paths, neither of which handles user input or ships in the browser bundle or the server's runtime code: patch-package -> find-yarn-workspace-root -> micromatch (client/ and server/), which runs at install time over this repository's own patches/ directory and workspace config; and vite-plugin-commonjs -> vite-plugin-dynamic-import -> fast-glob -> micromatch (client/ only), a Vite build plugin that expands glob patterns written in this repository's own source when the client is built. Upgrade as soon as a fixed braces (or a micromatch that drops it) is published. Renewed 2026-10-12 after re-checking upstream: braces 3.0.3 is still the newest release and the advisory still lists no patched version; micromatch 4.0.8, find-yarn-workspace-root 2.0.0, fast-glob 3.3.3, vite-plugin-dynamic-import 1.6.0 and vite-plugin-commonjs 0.10.4 are each the latest release and each still depends on braces through micromatch ^4. First accepted 2026-10-06; that acceptance named only the patch-package path.",
       "by": "deniss (asset owner of dlocmelis/planka and owner of risk R-14, dependency vulnerabilities, per devteam-orchestrator docs/isms/02-asset-inventory.md and docs/isms/04-risk-register.md), on merging the pull request that carries this entry",
-      "added": "2026-10-06",
-      "expires": "2026-12-05"
+      "added": "2026-10-12",
+      "expires": "2027-01-10"
     }
   ]
 }
