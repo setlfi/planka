@@ -4,7 +4,7 @@
  */
 
 // The orchestrator's Pipeline API, served by the card terminal that Caddy
-// mounts on the board's own origin at /_term (devteam-orchestrator,
+// mounts on the board's own origin at /_term (setlfi-build,
 // internal/cardterm/pipeline.go). It is called same-origin, so the board's
 // sign-in cookies are what authenticate the viewer; nothing else is sent.
 

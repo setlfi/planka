@@ -9,7 +9,7 @@ const {
   stripMarkdown,
 } = require('../../utils/voice-speech-text');
 
-// The table cases below are the SAME INPUTS setl's data/core/tts/table_test.go
+// The table cases below are the SAME INPUTS setlfi-be's data/core/tts/table_test.go
 // (TestNarrateTable) feeds its narrator, with the same expectations, because
 // that narrator is what this module was ported from and the claim being made
 // is that a table is read out the same way by both. Change one side and change

@@ -320,7 +320,7 @@ export const MessageAuthors = {
 /**
  * Planka's mention markup for a user — `@[username](id)`, the only form the
  * server stores as a mention and the form the orchestrator's own mention
- * matcher reads (devteam-orchestrator internal/board/mentions.go).
+ * matcher reads (setlfi-build internal/board/mentions.go).
  */
 export const botMentionMarkup = (bot) => `@[${bot.username}](${bot.id})`;
 

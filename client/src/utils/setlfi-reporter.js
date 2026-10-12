@@ -17,7 +17,7 @@
  *
  * So the entry is synthetic. Everything known about the reporter is in the card
  * description, in the header setl writes (`CardHeader`,
- * data/core/support/planka.go in the setl repository):
+ * data/core/support/planka.go in the setlfi-be repository):
  *
  *     **Setlfi ticket**
  *
@@ -54,8 +54,8 @@
  * internal/techlead/reporter.go (reporterMentionID) writes
  * `@[<name>](reporter)` on the bot's reply to a customer's Feedback comment,
  * so the reply reaches the customer the same way this dropdown's mention does.
- * Change the spelling here, in setl's visibility.go and in reporter.go
- * together (setl's docs/support-api-contract.md lists all three). A copy
+ * Change the spelling here, in setlfi-be's visibility.go and in reporter.go
+ * together (setlfi-be's docs/support-api-contract.md lists all three). A copy
  * changed on its own fails nothing and quietly stops the customer from
  * being answered.
  */
@@ -71,7 +71,7 @@ const REPORTER_LINE_PREFIX = 'Reporter:';
 // The closing rule, matched as "a line that is nothing but dashes" — `---` as
 // written today, `--------------` as written before, and any length between,
 // because a human retyping it does not count the dashes. It is `isHeaderRule`
-// in setl's data/core/support/planka.go, rule for rule.
+// in setlfi-be's data/core/support/planka.go, rule for rule.
 const isHeaderRule = (trimmed) => trimmed.length >= 3 && trimmed.replace(/-/g, '') === '';
 
 export const REPORTER_MENTION_ID = 'reporter';

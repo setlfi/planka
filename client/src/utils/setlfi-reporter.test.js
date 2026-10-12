@@ -11,7 +11,7 @@ import {
   parseReporterFromCardDescription,
 } from './setlfi-reporter';
 
-// The card header is written by ANOTHER REPOSITORY (setl's
+// The card header is written by ANOTHER REPOSITORY (setlfi-be's
 // data/core/support/planka.go, `CardHeader`) and there is no wire format
 // between the two. So it is written out here BY HAND, byte for byte — a test
 // that built the fixture from this module's own constants would agree with it
@@ -195,7 +195,7 @@ describe('hasReporterMention', () => {
 
 describe('the sentinel id', () => {
   it('is the literal setl looks for, and cannot be a Planka user id', () => {
-    // setl's data/core/support/visibility.go turns `@[<name>](reporter)` into a
+    // setlfi-be's data/core/support/visibility.go turns `@[<name>](reporter)` into a
     // comment the customer can read. Planka ids are numeric snowflakes, so the
     // sentinel can never collide with one.
     expect(REPORTER_MENTION_ID).toBe('reporter');

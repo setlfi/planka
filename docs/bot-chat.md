@@ -117,6 +117,6 @@ follows new messages until you scroll up, and then leaves you where you put
 yourself — a bot answer arrives minutes later, which is exactly the gap in
 which you went back to read something). The provenance is recorded in the file.
 
-What could not come across is the rendering: setl-web is Next.js + MUI and
+What could not come across is the rendering: setlfi-fe is Next.js + MUI and
 planka's client is React 18 + redux-orm + semantic-ui + SCSS modules, so the
 components are rebuilt on this app's own primitives rather than imported.

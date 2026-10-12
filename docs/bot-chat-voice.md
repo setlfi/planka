@@ -315,7 +315,7 @@ asked for a language it was not published for. And since transcription defaults
 to `multi` — ten languages, Russian included — that is a turn any deployment can
 reach without configuring anything.
 
-Three steps, in order, which is setl's own (`data/core/tts/cartesia.go`):
+Three steps, in order, which is setlfi-be's own (`data/core/tts/cartesia.go`):
 
 1. **The voice the client sent back**, so a conversation keeps one voice. The
    client gives that pin up when the user is heard in a DIFFERENT language, and
@@ -399,29 +399,29 @@ The ticket asked for the Setlfi assistant's own TTS and STT logic, and this is
 what came across:
 
 - **Endpointing** — `vadStep`, the noise-floor tracker, the gap rule, the speech
-  credit and the whole tuning, from setl-web's `lib/assistant/voice_chat.ts`.
+  credit and the whole tuning, from setlfi-fe's `lib/assistant/voice_chat.ts`.
 - **Recording** — the container candidates and the "can this browser record at
-  all" test, from setl-web's `lib/assistant/stt.ts`.
+  all" test, from setlfi-fe's `lib/assistant/stt.ts`.
 - **The Deepgram call** — the query it builds and the fields it reads back, from
-  setl's `data/core/stt/deepgram.go`; the upload allowlist and the error
+  setlfi-be's `data/core/stt/deepgram.go`; the upload allowlist and the error
   classification from `data/core/stt/stt.go`.
 - **The Cartesia call** — the request shape, the mandatory `Cartesia-Version`
   header, both credential headers and the refusal to follow redirects, from
-  setl's `data/core/tts/cartesia.go`.
+  setlfi-be's `data/core/tts/cartesia.go`.
 - **The per-language voice switch** — the resolution order, the catalogue query
-  and `pickVoice`'s native-locale preference, from setl's
+  and `pickVoice`'s native-locale preference, from setlfi-be's
   `data/core/tts/cartesia_voices.go`. Its one hand-picked entry
   (`builtinVoiceByLanguage`, Russian) did not come across: it exists because
   somebody chose that voice for that product by name, and everything setl says
   about a checked-in id rotting applies to a copy of it here.
-- **Playback, and stopping it aborting the request** — from setl-web's
+- **Playback, and stopping it aborting the request** — from setlfi-fe's
   `lib/assistant/useServerSpeaker.ts`, which holds the reading's
   `AbortController` in a ref, bumps a generation on every stop and every new
   reading, and revokes its object URL on both. `newSpeechTurn` here is the same
   idea with the queue left out: a planka_bot reply arrives complete, so there
   is one turn at a time rather than a stream of parts to supersede.
 - **Markdown → speech** — the strip and the table narration, verbatim, from
-  setl's `data/core/tts/markdown.go` and `table.go`. The cases in
+  setlfi-be's `data/core/tts/markdown.go` and `table.go`. The cases in
   `server/test/utils/voice-speech-text.test.js` are the same inputs and the same
   expectations as `TestNarrateTable` there, so a table is read out the same way
   by both products. **Change one side and change the other.**
@@ -429,9 +429,9 @@ what came across:
 Four things were deliberately left behind, each with its reason recorded beside
 the code:
 
-- **Barge-in and echo suppression** (setl-web's `suppressEchoedSpeech`) — see
+- **Barge-in and echo suppression** (setlfi-fe's `suppressEchoedSpeech`) — see
   "half-duplex" above.
-- **The number pass** (setl's `data/core/tts/numbers.go`, "1.2M" → "1.2
+- **The number pass** (setlfi-be's `data/core/tts/numbers.go`, "1.2M" → "1.2
   million") — it is gated on the message being English and it rewrites the
   author's own characters, where being wrong about the locale changes a figure's
   value. A board comment is not the per-merchant financial table it was written
@@ -440,7 +440,7 @@ the code:
   parts. A planka_bot reply arrives complete, minutes later, so the whole clip is
   synthesized in one request. The voice/language pin the assistant needs for
   multi-part replies is still carried, so a conversation keeps one voice.
-- **Server-side language detection of the reply** (setl's
+- **Server-side language detection of the reply** (setlfi-be's
   `data/core/tts/language.go`). setl detects the language of each ANSWER and
   chooses a voice for that; here the language is the one the user's own
   utterance was transcribed as, sent up by the client. It is the same answer
