@@ -6,7 +6,7 @@
 /**
  * Which voice speaks a language the deployment has not pinned one for.
  *
- * Ported from setl's `data/core/tts/cartesia_voices.go`, which is the code this
+ * Ported from setlfi-be's `data/core/tts/cartesia_voices.go`, which is the code this
  * ticket was told to reuse. It exists because Cartesia's voices are NOT
  * interchangeable across languages: each is published FOR a language and
  * carries the locales it can also cover, and the fallback this ships (Skylar)

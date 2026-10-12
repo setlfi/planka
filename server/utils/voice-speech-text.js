@@ -11,7 +11,7 @@
  * seconds of punctuation. This is the one place that is fixed, before anything
  * reaches a provider.
  *
- * Ported from the Setlfi assistant's server voice — setl's
+ * Ported from the Setlfi assistant's server voice — setlfi-be's
  * `data/core/tts/markdown.go` (the strip) and `data/core/tts/table.go` (the
  * narration), which are the files this ticket was told to reuse. The wording of
  * the narration, the row cap and the placeholders are carried across
@@ -681,7 +681,7 @@ const cutSpeechText = (text, maxChars) => {
 // `narrateTable` is deliberately NOT exported, and neither is the row cap: the
 // narrator is only ever reached through `stripMarkdown`, and the block loop's
 // hand-off to it is half of what makes the narration correct — a test that
-// called the narrator directly would not see it. setl's own table_test.go says
+// called the narrator directly would not see it. setlfi-be's own table_test.go says
 // the same thing about the same function.
 module.exports = {
   CODE_PLACEHOLDER,

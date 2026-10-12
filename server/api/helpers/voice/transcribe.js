@@ -7,7 +7,7 @@
  * One complete audio blob → one transcript, through Deepgram's pre-recorded
  * /v1/listen endpoint.
  *
- * Ported from setl's `data/core/stt/deepgram.go`, down to the query it builds
+ * Ported from setlfi-be's `data/core/stt/deepgram.go`, down to the query it builds
  * and the fields it reads back. Two of those parameters are worth knowing
  * rather than copying blind:
  *

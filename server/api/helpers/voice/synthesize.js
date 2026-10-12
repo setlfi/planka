@@ -6,7 +6,7 @@
 /**
  * One message → one clip of speech, through Cartesia's POST /tts/bytes.
  *
- * Ported from setl's `data/core/tts/cartesia.go`. Three request facts came
+ * Ported from setlfi-be's `data/core/tts/cartesia.go`. Three request facts came
  * from that file rather than from documentation, and each was confirmed
  * against the live API there:
  *
@@ -168,7 +168,7 @@ const outputFormatFor = (config) =>
 /**
  * Which voice reads this message, and in which language.
  *
- * Three steps, which is setl's own order (`data/core/tts/cartesia.go`
+ * Three steps, which is setlfi-be's own order (`data/core/tts/cartesia.go`
  * `resolveVoice`): a voice the CALLER named, then the deployment's own
  * `VOICE_TTS_VOICES` pin for the language, then the provider's catalogue. The
  * pin is checked before the network so a deployment that has chosen its voices

@@ -8,7 +8,7 @@
  *
  * Ported from the Setlfi assistant's own speech stack, which is the code this
  * ticket was told to reuse: the upload allowlist, the keyterm parsing and the
- * error classification come from setl's `data/core/stt/stt.go`, and the voice
+ * error classification come from setlfi-be's `data/core/stt/stt.go`, and the voice
  * map, the id/language shapes and the character counting from
  * `data/core/tts/cartesia.go`. Go cannot cross into a Sails app, so what came
  * across is the half that actually encodes the behaviour — and it is pure, so
