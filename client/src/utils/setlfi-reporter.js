@@ -34,7 +34,7 @@
  * a row of dashes; that shape made this renderer's own Markdown transform read
  * the card as YAML front matter and print a stack trace where the description
  * belongs, so setl rewrote it. The board still holds every card raised before
- * that, and their reporters have to be taggable too — setl's own
+ * that, and their reporters have to be taggable too — setlfi-be's own
  * `CustomerDescriptionFrom` accepts both for the same reason.
  *
  * THIS IS A CONTRACT BETWEEN TWO REPOSITORIES WITH NO WIRE FORMAT IN BETWEEN.
@@ -42,9 +42,9 @@
  * nothing here can fail loudly: a reworded header does not break a build, it
  * quietly empties this dropdown, and the customer is never answered.
  * `setlfi-reporter.test.js` pins it here, `TestCardHeaderIsTheShapePlankaParses`
- * pins it in setl.
+ * pins it in setlfi-be.
  *
- * The other end of the round trip is setl's `CommentVisibility`
+ * The other end of the round trip is setlfi-be's `CommentVisibility`
  * (data/core/support/visibility.go): a comment whose text carries
  * `@[<name>](reporter)` anywhere is mirrored as visible to the reporter and
  * appears on their /feedback page. REPORTER_MENTION_ID is that sentinel, and it
@@ -163,7 +163,7 @@ export const buildMentionData = (boardMemberships, reporter) => {
 export const isReporterMentionId = (id) => id === REPORTER_MENTION_ID;
 
 // The markup react-mentions writes for the entry above, and the same expression
-// setl's `HasReporterMention` applies to the stored comment. It is here so the
+// setlfi-be's `HasReporterMention` applies to the stored comment. It is here so the
 // composer can SAY what the tag is about to do — a comment that reaches a
 // customer should never be a surprise to the person who wrote it.
 const REPORTER_MENTION_REGEX = new RegExp(`@\\[.*?\\]\\(${REPORTER_MENTION_ID}\\)`);

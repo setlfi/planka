@@ -447,5 +447,5 @@ the code:
   whenever the bot replies in the language it was asked in, which is what
   planka_bot does, and it needs no language model on a Sails server. Where they
   differ — an English answer to a Russian question — the Russian voice reads the
-  English, which is the direction setl's own `builtinVoiceByLanguage` note
+  English, which is the direction setlfi-be's own `builtinVoiceByLanguage` note
   describes as acceptable.

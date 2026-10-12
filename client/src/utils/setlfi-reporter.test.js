@@ -18,7 +18,7 @@ import {
 // again after somebody reworded either side, and the failure that reaches a
 // customer instead is silent: an empty dropdown and a ticket nobody answers.
 //
-// The counterpart is `TestCardHeaderIsTheShapePlankaParses` in setl.
+// The counterpart is `TestCardHeaderIsTheShapePlankaParses` in setlfi-be.
 const SUPPORT_CARD_DESCRIPTION = [
   '**Setlfi ticket**',
   '',
@@ -175,7 +175,7 @@ describe('buildMentionData', () => {
 });
 
 describe('hasReporterMention', () => {
-  // It answers the same question setl's `HasReporterMention` answers over the
+  // It answers the same question setlfi-be's `HasReporterMention` answers over the
   // stored comment, and it is what the composer's "the reporter will see this"
   // notice hangs off — so the two must not drift.
   it('is true for the markup the dropdown writes, anywhere in the text', () => {

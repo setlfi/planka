@@ -160,7 +160,7 @@ describe('the comment composer on a Setlfi support card', () => {
     // leaves at the library default — `@[__display__](__id__)`, the same
     // spelling utils/mentions.js writes for a board member. Picking the
     // reporter therefore lands `@[Deniss Locmelis](reporter)` in the comment,
-    // which is what setl's CommentVisibility publishes to the feedback page.
+    // which is what setlfi-be's CommentVisibility publishes to the feedback page.
     render();
 
     expect(mentionProps.markup).toBeUndefined();
