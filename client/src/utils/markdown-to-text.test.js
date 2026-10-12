@@ -17,7 +17,7 @@ jest.mock('../configs/markdown-plugins', () => ({ __esModule: true, default: [] 
 const textTokens = (text) => [{ children: [{ type: 'text', content: text }] }];
 
 // A card description raised by the Setlfi support API before its header stopped
-// looking like YAML front matter (setl: data/core/support/planka.go).
+// looking like YAML front matter (setlfi-be: data/core/support/planka.go).
 const LEGACY_SETL_HEADER = [
   '--- Setlfi ---',
   'Reporter: Deniss Locmelis den@setlfi.com',

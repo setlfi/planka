@@ -6,7 +6,7 @@
 /**
  * Choosing a voice out of the provider's own catalogue.
  *
- * Ported from setl's `data/core/tts/cartesia_voices.go` — `pickVoice` and the
+ * Ported from setlfi-be's `data/core/tts/cartesia_voices.go` — `pickVoice` and the
  * `cartesiaVoiceList` envelope — which is the code this ticket was told to
  * reuse. The part that talks to the network is `api/helpers/voice/
  * lookup-voice.js`; this file is the decision, so `npm test` drives all of it

@@ -115,7 +115,7 @@ describe('Markdown', () => {
 // WHAT THE MOCK ABOVE CANNOT SAY: that the shape really does throw. This runs
 // the front-matter step of the installed @diplodoc/transform — the same code
 // path transform() reaches through its Liquid pass — over the two header shapes
-// the Setlfi support API writes (setl: data/core/support/planka.go, CardHeader).
+// the Setlfi support API writes (setlfi-be: data/core/support/planka.go, CardHeader).
 describe('@diplodoc/transform front matter', () => {
   const { extractFrontMatter } = jest.requireActual('@diplodoc/transform/lib/frontmatter');
 

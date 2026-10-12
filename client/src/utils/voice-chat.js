@@ -15,7 +15,7 @@
  * Ported from the Setlfi web assistant, which is the implementation this
  * ticket was told to reuse: the endpointing (`vadStep` and its whole tuning,
  * the noise-floor tracker, the gap rule, the speech credit) comes from
- * setl-web's `lib/assistant/voice_chat.ts`, the recorder container choice and
+ * setlfi-fe's `lib/assistant/voice_chat.ts`, the recorder container choice and
  * the failure copy from `lib/assistant/stt.ts`, and the length rules for
  * reading a message aloud from `lib/assistant/tts.ts`. The React there is
  * Next.js + MUI and cannot cross into this app, but the arithmetic is the half

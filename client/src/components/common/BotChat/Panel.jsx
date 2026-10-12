@@ -249,7 +249,7 @@ const Panel = React.memo(
               the implicit polite live region, so it is read out without taking
               the keyboard away from whatever is being typed next. It is what
               the Setlfi assistant marks its own turn status with
-              (setl-web `components/assistant/TurnStatusRow.tsx`, rendered on
+              (setlfi-fe `components/assistant/TurnStatusRow.tsx`, rendered on
               the same condition — only while there is a turn to report). */}
           {replyState === BotReplyStates.THINKING && (
             <div role="status" className={styles.status}>

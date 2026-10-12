@@ -9,7 +9,7 @@
  * width, and the mapping from a card's comments onto chat messages.
  *
  * Ported from the Setlfi web assistant, which is the widget this one is asked
- * to mirror: the bounds and the drag/storage rules come from setl-web's
+ * to mirror: the bounds and the drag/storage rules come from setlfi-fe's
  * `lib/assistant/widget_width.ts` (panel width) and the launcher block of
  * `components/assistant/AssistantWidget.tsx` (hold-then-drag reposition,
  * clamped to the viewport, persisted per browser). The React there is Next.js
@@ -320,7 +320,7 @@ export const MessageAuthors = {
 /**
  * Planka's mention markup for a user — `@[username](id)`, the only form the
  * server stores as a mention and the form the orchestrator's own mention
- * matcher reads (devteam-orchestrator internal/board/mentions.go).
+ * matcher reads (setlfi-build internal/board/mentions.go).
  */
 export const botMentionMarkup = (bot) => `@[${bot.username}](${bot.id})`;
 
