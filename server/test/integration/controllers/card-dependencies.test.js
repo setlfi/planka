@@ -667,7 +667,7 @@ describe('Card dependencies', function describeCardDependencies() {
     const calls = webhooksFor(Webhook.Events.CARD_DEPENDENCY_CREATE);
     expect(calls).to.have.lengthOf(1);
 
-    // The exact document a consumer parses: devteam-orchestrator's
+    // The exact document a consumer parses: setlfi-build's
     // internal/webhook/webhook.go reads item.cardId and item.dependsOnCardId,
     // then picks the WAITING card out of included.cards BY ID to learn which
     // board and list it is on. Asserted field by field because a consumer that

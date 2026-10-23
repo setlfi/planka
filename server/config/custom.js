@@ -117,7 +117,7 @@ module.exports.custom = {
 
   // Speech-to-text. An empty key is the whole of the feature gate: no key, no
   // provider, the route answers 503 and the bootstrap reports the mode
-  // unavailable — the same shape setl's DeepgramAPIKey has.
+  // unavailable — the same shape setlfi-be's DeepgramAPIKey has.
   deepgramApiKey: process.env.DEEPGRAM_API_KEY,
   voiceSttProvider: process.env.VOICE_STT_PROVIDER || 'deepgram',
   voiceSttModel: process.env.VOICE_STT_MODEL || 'nova-3',

@@ -8,7 +8,7 @@
  *
  * Typed so a caller can tell an upstream refusal (bad key, unsupported audio,
  * rate limit) from a transport failure and choose a status code for it —
- * setl's `stt.ProviderError`, in the shape this codebase writes errors.
+ * setlfi-be's `stt.ProviderError`, in the shape this codebase writes errors.
  */
 class VoiceProviderError extends Error {
   constructor(provider, statusCode, body) {

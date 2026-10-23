@@ -26,7 +26,7 @@
 // server/test/utils/pipeline-statistics.test.js.
 //
 // A move is read by the NAMES of its columns, exactly as the orchestrator
-// reads the board (devteam-orchestrator, internal/fsm/fsm.go): these are its
+// reads the board (setlfi-build, internal/fsm/fsm.go): these are its
 // column names, and a board that does not use them simply counts zero. The
 // names are compared trimmed and case-insensitively, as the orchestrator's
 // equalList does.
@@ -321,7 +321,7 @@ const compute = ({ actions, creations = [], now, since = null, range = null, car
 // does.
 
 // The per-card field the orchestrator writes a card's spend into
-// (devteam-orchestrator, internal/board/board.go FieldEstCost), as text such
+// (setlfi-build, internal/board/board.go FieldEstCost), as text such
 // as "$1.97" — or "unpriced", which is no cost at all.
 const COST_FIELD_NAME = 'Est. Cost (USD)';
 
@@ -330,7 +330,7 @@ const COST_FIELD_NAME = 'Est. Cost (USD)';
 // two autumn clock changes and one spring one (28 Oct 2023 - 27 Oct 2024 in
 // Europe): 366 days and an hour. The cap allows that hour, so the client never
 // sends a period the server refuses. The orchestrator's MaxStatsRange
-// (devteam-orchestrator, internal/cardterm/pipelinestats.go) is the same.
+// (setlfi-build, internal/cardterm/pipelinestats.go) is the same.
 const MAX_RANGE_DAYS = 366;
 const MAX_RANGE_SECONDS = MAX_RANGE_DAYS * DAY_SECONDS + 60 * 60;
 const MAX_SEARCH_LENGTH = 256;
@@ -461,7 +461,7 @@ const parseFilters = (query = {}) => {
 const hasCardFilter = (filters) => Object.keys(filters || {}).length > 0;
 
 // The ticket's reporter, from the header the setl support feature writes at
-// the top of a card's description (setl, data/core/support/planka.go
+// the top of a card's description (setlfi-be, data/core/support/planka.go
 // CardHeader):
 //
 //     **Setlfi ticket**

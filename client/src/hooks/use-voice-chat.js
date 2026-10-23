@@ -12,7 +12,7 @@
  * has stopped, or may be heard at all lives in `utils/voice-chat.js`, where a
  * test can drive it frame by frame. This file only carries them out.
  *
- * Ported in shape from setl-web's `lib/assistant/useVoiceChat.ts` (the sampler,
+ * Ported in shape from setlfi-fe's `lib/assistant/useVoiceChat.ts` (the sampler,
  * the recorder lifecycle, the generation guard) and `lib/assistant/
  * useServerSpeaker.ts` (playback, and stopping it aborting the request). The
  * loop is half-duplex here — see the header of `utils/voice-chat.js` for why —

@@ -61,7 +61,7 @@ const CURSOR_QUERY_STRING =
 
 // What the only over-HTTP caller of this endpoint actually puts on the wire: Go's
 // `url.Values.Encode()` percent-encodes the brackets too
-// (setl/data/core/support/planka.go, `(*PlankaClient).ArchivedCards`).
+// (setlfi-be/data/core/support/planka.go, `(*PlankaClient).ArchivedCards`).
 const PERCENT_ENCODED_CURSOR_QUERY_STRING =
   'before%5BlistChangedAt%5D=2024-01-01T00%3A00%3A00.000Z&before%5Bid%5D=1357158568008091264';
 
